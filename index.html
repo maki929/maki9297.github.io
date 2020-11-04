@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="utf-8">
+<title>【Mac】Safariでソースコードを見る方法 |  Webデザインラボ</title>
+<meta name="description" content="【Mac】Safariでソースコードを見る方法  ">
+
+<meta name="robots" content="index,archive,follow">
+<link rel="alternate" type="application/rss+xml" title="Webデザインラボ RSSフィード" href="https://www.webdlab.com/feed/">
+<meta name="keywords" content="Webサイト,ホームページ,HTML5,CSS3,JavaScript,jQuery,PHP,MySQL,Perl">
+
+<!--Require Mobile-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=10.0, user-scalable=yes">
+<!--Require Favicon-->
+<link rel="shortcut icon" href="https://www.webdlab.com/favicon.ico">
+<link rel="icon" href="https://www.webdlab.com/favicon.ico">
+<link rel="apple-touch-icon" href="https://www.webdlab.com/apple-touch-icon.png">
+<!--Require Stylesheet-->
+<link rel="stylesheet" href="https://www.webdlab.com/wp/wp-content/themes/webdesignlab/style.css">
+<link rel="stylesheet" href="https://www.webdlab.com/wp/wp-content/themes/webdesignlab/common.css">
+
+<!--Require JavaScript-->
+<!--[if IE]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<script src="//css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+<![endif]-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script><!--1.11.1から変更しない-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="/common/js/base.js"></script>
+<script src="/common/js/drawernav.js"></script>
+<script src="/common/js/fixednav.js"></script>
+<link rel='dns-prefetch' href='//webfonts.sakura.ne.jp' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Webデザインラボ &raquo; 【Mac】Safariでソースコードを見る方法 のコメントのフィード" href="https://www.webdlab.com/mac/tips-view-source-code/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.webdlab.com\/wp\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.5.3"}};
+			!function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='https://www.webdlab.com/wp/wp-includes/css/dist/block-library/style.min.css?ver=5.5.3' type='text/css' media='all' />
+<script type='text/javascript' src='https://www.webdlab.com/wp/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp' id='jquery-core-js'></script>
+<script type='text/javascript' src='//webfonts.sakura.ne.jp/js/sakurav2.js?fadein=0&#038;ver=3.0.0' id='typesquare_std-js'></script>
+<link rel="https://api.w.org/" href="https://www.webdlab.com/wp-json/" /><link rel="alternate" type="application/json" href="https://www.webdlab.com/wp-json/wp/v2/posts/21283" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.webdlab.com/wp/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.webdlab.com/wp/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='【ブログ】LAVIE Tab E 7型ワイド' href='https://www.webdlab.com/blog/article-15/' />
+<link rel='next' title='【Google】Google翻訳ツールをサイトにはってみる' href='https://www.webdlab.com/labs/google-translate/' />
+<meta name="generator" content="WordPress 5.5.3" />
+<link rel="canonical" href="https://www.webdlab.com/mac/tips-view-source-code/" />
+<link rel='shortlink' href='https://www.webdlab.com/?p=21283' />
+<link rel="alternate" type="application/json+oembed" href="https://www.webdlab.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.webdlab.com%2Fmac%2Ftips-view-source-code%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.webdlab.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.webdlab.com%2Fmac%2Ftips-view-source-code%2F&#038;format=xml" />
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-17220994-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-17220994-1');
+</script>
+
+
+
+
+
+
+<!--OGP-->
+<style>
+.attachment-post-thumbnail,
+.size-post-thumbnail,
+.wp-post-image {
+  display: none;
+}
+</style>
+
+<meta property="fb:admins" content="318213614942719" />
+<meta property="og:locale" content="ja_JP">
+<meta property="og:type" content="blog">
+<meta property="og:description" content="Last updated on 2017/01/22 こんにちは（・∀・） MacのSafariでWebサイトを見ている時、ちょっと不便だなーと思うことがありました。 何かと言いますと、Safariだ">
+<meta property="og:title" content="【Mac】Safariでソースコードを見る方法">
+<meta property="og:url" content="https://www.webdlab.com/mac/tips-view-source-code/">
+<meta property="og:site_name" content="Webデザインラボ">
+<meta property="og:image" content="/mac/tips-view-source-code/mac.jpg">
+<!--OGP-->
+<!--<meta name="twitter:card" content="summary_large_image">-->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@webdlab">
+
+
+
+
+
+
+<!--Use Facebook Plugin-->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.3&appId=318213614942719";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<!--Use Facebook Plugin-->
+
+<!--自動広告-->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-5994867225041223",
+          enable_page_level_ads: true
+     });
+</script>
+<!--自動広告-->
+
+<!--FontAwesome-->
+<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+<!--FontAwesome-->
+
+</head>
+<body class="post-template-default single single-post postid-21283 single-format-standard">
+<div id="wrapper">
+<div id="_btn">
+<div id="_btn_nav">
+<div id="nav_close"><img src="/common/img/_btn.png" alt="menu"></div><div id="nav_open"><img src="/common/img/_btn.png" alt="menu"></div>
+<!--_btn_nav--></div>
+<div id="_btn_aside">
+<div id="aside_close"><img src="/common/img/_btn2.png" alt="menu"></div><div id="aside_open"><img src="/common/img/_btn2.png" alt="menu"></div>
+<!--_btn_aside--></div>
+<div id="_btn_logo"><a href="/"><img src="/common/img/logo-s.png" alt="Webデザインラボ"></a></div>
+<!--_btn--></div>
+
+<header class="head-single-page">
+
+<style>
+#contents .top-main .top-post {/*index.php*/
+  margin: 0 0 20px 0;
+  padding: 0;
+  display: flex;
+}
+@media (min-width: 769px) {
+#contents .top-main .top-post {/*index.php*/
+  margin: 0 10px 20px 0;
+  padding: 0;
+  display: flex;
+}
+}
+</style>
+
+<noscript>当サイトはJavaScriptが有効に設定されていないと正しく表示されません。</noscript>
+<section>
+<h2 id="toplogo"><a href="/"><img src="/common/img/logo2.png" alt="Webデザインラボ"></a></h2>
+<div class="ad_">
+<!--ad_--></div>
+</section>
+</header>
+<div class="search-sp">
+<p>キーワード検索</p>
+<form action="//www.google.co.jp/cse" id="cse-search-box">
+  <div>
+    <input type="hidden" name="cx" value="partner-pub-5994867225041223:8818733465" />
+    <input type="hidden" name="ie" value="UTF-8" />
+    <input type="text" name="q" size="30" />
+    <input type="submit" name="sa" value="検索" />
+  </div>
+</form>
+<script type="text/javascript" src="//www.google.co.jp/coop/cse/brand?form=cse-search-box&amp;lang=ja"></script>
+<!--search-sp--></div><!--search-pcはsidebarの中-->
+<nav id="gnav">
+<ul>
+<li>Contents</li>
+<li><a href="/html/">HTML</a></li>
+<li><a href="/css/">CSS</a>
+  <ul class="g-child">
+  <li><a href="/css/css3-selector/">セレクタ - CSS3</a></li>
+  <li><a href="/css/css-selector/">セレクタ - CSS2.1</a></li>
+  </ul>
+</li>
+<li><a href="/labs/">Labs</a></li>
+<li><a href="/local/">ローカル</a></li>
+<li><a href="/mac/">Mac</a></li>
+<li><a href="/iphone-ipad/">iPhone・iPad</a></li>
+<li><a href="/javascript/">JavaScript</a></li>
+<li><a href="/jquery/">jQuery</a></li>
+<li><a href="/camera/">Camera</a></li>
+<li><a href="/gimp/">GIMP</a></li>
+<li><a href="/inkscape/">Inkscape</a></li>
+<li><a href="/guide/">ガイド</a></li>
+<li><a href="/webtool/">ツール</a></li>
+<li><a href="/blog/">ブログ</a></li>
+</ul>
+<!--gnav--></nav>
+<div id="headbtm">
+<div id="breadcrumbs">
+<ul><li><a href="https://www.webdlab.com/">Home</a></li><li>&nbsp;&gt;&nbsp;</li><li><a href="https://www.webdlab.com/category/mac/">Mac</a></li><li>&nbsp;&gt;&nbsp;</li><li>【Mac】Safariでソースコードを見る方法</li></ul><!--breadcrumbs--></div>
+<div id="textsize">
+&nbsp;
+<!--textsize--></div>
+<!--headbtm--></div><div id="contents">
+<div id="main" class="main">
+<div class="post access">
+<!--emp stay | emv up | emo down-->
+
+<h4 class="cupdate">11月更新・前月(10月)の人気記事トップ10 - <small class="emp ">11/02/2020</small></h4>
+<ol>
+<li><small class="emp">(　１ − ) </small><a href="/mac/setting-account-name/">【Mac】Macのユーザー名とアカウント名を変更する</a></li>
+<li><small class="emo">(　３ ↑) </small><a href="/labs/responsive-web-design-5/">【2020年度決定版】レスポンシブデザインのブレークポイントはこれで決まり❗️</a></li>
+<li><small class="emo">(　４ ↑) </small><a href="/labs/dropdownmenu-3/">【CSS】CSSだけでドロップダウンメニュー</a></li>
+<li><small class="emo">(　６ ↑) </small><a href="/mac/tips-view-source-code/">【Mac】Safariでソースコードを見る方法</a></li>
+<li><small class="emp">(　５ − ) </small><a href="/mac/tips-finder-2/">【Mac】Finderにフォルダのフルパスを表示させる方法</a></li>
+<li><small class="emo">(　８ ↑) </small><a href="/jquery/jquery-prepare/">【jQuery】入門2. jQueryをHTMLに組み込む</a></li>
+<li><small class="emv">(　２ ↓) </small><a href="/iphone-ipad/iphone-twitter/">【iPhone iPad】iPhoneのツイッターアプリでユーザー名をコピーする方法</a></li>
+<li><small class="emv">(　８ ↓) </small><a href="/iphone-ipad/airdrop/">【iPhone・iPad】投稿の準備中にエラーが起きました。後でやり直してください。</a></li>
+<li><small class="emo">( 圏外↑) </small><a href="/iphone-ipad/iphone-2/">【iPhone・iPad】iPhoneのメモリを簡単に解放する方法</a></li>
+<li><small class="emp">( １０− ) </small><a href="/jquery/jquery-new-date/">【jQuery】入門5. jQueryで日時を表示</a></li>
+
+</ol>
+</div><div class="ad_unit1">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- webdlab Responsive advertisement unit1(www.webdlab.com) -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5994867225041223"
+     data-ad-slot="2143419067"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!--ad_unit1--></div><div class="nav-1">
+<span class="nav-previous"><a href="https://www.webdlab.com/blog/article-15/" rel="prev"><b>【ブログ】LAVIE Tab E 7型ワイド</b></a></span>
+<span class="nav-next"><a href="https://www.webdlab.com/labs/google-translate/" rel="next"><b>【Google】Google翻訳ツールをサイトにはってみる</b></a></span>
+<!--nav-1--></div>
+<style>
+.sns2 {position: relative;z-index: 2;margin: 20px auto;text-align: center;}
+.sns2 div {display: inline-block;}
+.sns2 .fb {position: relative;top: -2px;}
+.sns2 .hatena {position: relative;top: 4px;}
+.sns2 .tw {margin-left: 10px;}
+.sns2 .pocket {width: 86px;position: relative;top: 2px;left:-13px;height: 12px;}
+.sns2 .pocket a {padding:  6px 10px;text-decoration: none;font-size: 12px;border-radius: 3px;background: #ef5362;color: #fff;}
+/*.sns2 .pocket {position: relative;top: -6px;left: -1px;}
+.sns2 .pocket a {background: #ef5362;color: #fff;padding:  8px 10px;text-decoration: none;font-size: 12px;border-radius: 3px;}*/
+/*pocketカウントありはこっち.sns2 .tw {position: relative;top: 4px;left: -1px;}*/
+/*pocketカウントなしはこっち*/.sns2 .tw {position: relative;top: 4px;left: -37px;}
+/*pocketなしはこっち.sns2 .tw {position: relative;top: 4px;left: -4px;}*/
+@media screen and (min-width: 835px) {/*PC1*/
+/*.sns2 .pocket {position: relative;top: -5px;left: -1px;}*/
+/* ** */}
+</style>
+<div class="sns2">
+<div class="fb">
+<!--
+<div class="fb-like" data-layout="button_count" data-size="large" data-href="/mac/tips-view-source-code/"></div>
+-->
+<div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="" data-layout="button" data-action="recommend" data-size="large" data-share="false"></div>
+<!--fb--></div>
+<div class="hatena">
+<!--
+<a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" data-hatena-bookmark-height="28" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async" js.async=true;></script>
+-->
+<a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label" data-hatena-bookmark-lang="ja" data-hatena-bookmark-width="90" data-hatena-bookmark-height="28" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<!--hatena--></div>
+<div class="pocket">
+<!--
+<a href="http://getpocket.com/edit?url=https://www.webdlab.com/&title=" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">Pocket 
+</a>-->
+<!--
+<a data-pocket-label="pocket" data-pocket-count="horizontal" class="pocket-btn" data-lang="en"></a>
+<script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
+-->
+<a data-pocket-label="pocket" data-pocket-count="none" class="pocket-btn" data-lang="en"></a>
+<script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
+<!--pocket--></div>
+<div class="tw">
+<a href="https://twitter.com/share" class="twitter-share-button" 
+data-url=""
+data-text=""
+data-lang="ja"
+data-size="large">
+</a>
+ <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+<!--tw--></div>
+<!--sns2--></div><div class="post clearfix">
+<h2 class="title">【Mac】Safariでソースコードを見る方法</h2>
+<div class="blog_info_top">
+<ul>
+<li><time class="posted">Posted on 2017/01/22</time></li>
+<li><ul class="post-categories">
+	<li><a href="https://www.webdlab.com/category/mac/" rel="category tag">Mac</a></li></ul></li>
+<li></li>
+</ul>
+</div>
+<article>
+<time datetime="2017-01-22" class="updated">Last updated on 2017/01/22</time>
+<h3 class="img-100"><img src="/mac/tips-view-source-code/mac.jpg" alt="【Mac】Safariでソースコードを見る方法"></h3>
+
+<p class="gt">こんにちは（・∀・）</p>
+<p>MacのSafariでWebサイトを見ている時、ちょっと不便だなーと思うことがありました。</p>
+
+<p>何かと言いますと、SafariだとWebサイトのソースコードが見れないー。</p>
+
+<div class="readmore"><span id="more-21283"></span></div>
+
+<h4>Safariでソースコードが見れない</h4>
+
+<p>仕事柄、気になった動きをするWebサイトがあると必ず見たくなるのがそのWebサイトのソースコード。</p>
+
+<p>Windowsでやっていた時のようにSafariでもソースコードを見ようと右クリックしたのですが見当たらず...</p>
+
+<p class="img-600"><img src="/mac/tips-view-source-code/img/01.png" alt="【Mac】Safariでソースコードを見る方法"></p>
+
+<p>メニューバーの中にもそれらしきものはない...</p>
+
+<p>しょうがないからソースコードを見たい時はChromeやFirefoxに変えて見ていたりしていたのですが、ちょっと面倒ー。</p>
+
+<p>元々Firefoxを使っていたので、だったらFirefoxに変えればいいのではという話しもあると思いますが、せっかくMacを買ったのだからしばらくはSafariを使ってみたい...</p>
+
+<p>ということで調べて見たら簡単に解決できました。</p>
+
+<h5>Safariでソースコードを見る方法</h5>
+
+<p>Safariの環境設定を開きます。</p>
+
+<p class="img-300"><img src="/mac/tips-view-source-code/img/02.png" alt="【Mac】Safariでソースコードを見る方法"></p>
+
+<p>詳細の一番下にある「メニューバーに"開発"メニューを表示」にチェックを入れます。</p>
+
+<p class="img-600"><img src="/mac/tips-view-source-code/img/03.png" alt="【Mac】Safariでソースコードを見る方法"></p>
+
+<p>するとメニューバーに開発のメニューが表示されます。</p>
+
+<p class="img-600"><img src="/mac/tips-view-source-code/img/04.png" alt="【Mac】Safariでソースコードを見る方法"></p>
+
+<p>開発をクリックするとありました、「ページのソースを表示」。</p>
+
+<p class="img-500"><img src="/mac/tips-view-source-code/img/05.png" alt="【Mac】Safariでソースコードを見る方法"></p>
+
+<p>右クリックでも見られるようになりました。</p>
+
+<p class="img-400"><img src="/mac/tips-view-source-code/img/06.png" alt="【Mac】Safariでソースコードを見る方法"></p>
+
+<p>デフォルトでは同じウィンドウの下に表示されますが、ボタンをクリックして横に表示したり別ウィンドウにすることもできます。</p>
+
+<p class="img-600"><img src="/mac/tips-view-source-code/img/07.png" alt="【Mac】Safariでソースコードを見る方法"></p>
+
+<hr>
+
+<p>いかがでしたでしょうか、これでSafariでもソースコードを見ることができるようになりましたね。というかソースコードを見るだけではなくSafariでの開発環境もこれで整っちゃいました。</p>
+<p>&nbsp;</p>
+
+<div class="b-mura">
+<!--<a href="//www.blogmura.com/ranking.html" target="_blank"><img src="//www.blogmura.com/img/www88_31.gif" width="88" height="31" border="0" alt="ブログランキング・にほんブログ村へ" /></a>-->
+<a href="//design.blogmura.com/webdesign/ranking.html" target="_blank"><img src="//design.blogmura.com/webdesign/img/webdesign88_31.gif" width="88" height="31" border="0" alt="にほんブログ村 デザインブログ Webデザインへ" /></a>
+<!--<a href="//it.blogmura.com/ranking.html" target="_blank"><img src="//it.blogmura.com/img/it88_31.gif" width="88" height="31" border="0" alt="にほんブログ村 IT技術ブログへ" /></a>-->
+<!--<a href="//blog.with2.net/link/?1980014:1030" target="_blank"><img src="https://blog.with2.net/img/banner/c/banner_1/br_c_1030_1.gif" title="Webサイト・CGIランキング"></a>-->
+<a href="//blog.with2.net/link/?1980014:1072" target="_blank"><img src="https://blog.with2.net/img/banner/c/banner_1/br_c_1072_1.gif" title="ウェブデザインランキング"></a>
+</div>
+
+</article>
+<div class="ad_unit6">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- webdlab Responsive advertisement unit6(www.webdlab.com) -->
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-format="fluid"
+     data-ad-layout="in-article"
+     data-ad-client="ca-pub-5994867225041223"
+     data-ad-slot="1882102475"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!--ad_unit6--></div><div class="blog_info_btm">
+<ul>
+<!--<li class="tag">タグ：<a href="https://www.webdlab.com/tag/mac/" rel="tag">Mac</a>, <a href="https://www.webdlab.com/tag/safari/" rel="tag">Safari</a></li>-->
+<!--<li class="tag"><a href="https://www.webdlab.com/tag/mac/" rel="tag">Mac</a> <a href="https://www.webdlab.com/tag/safari/" rel="tag">Safari</a></li>-->
+<li class="tag"><span>Mac</span> <span>Safari</span> </li>
+</ul>
+</div>
+<!--post--></div>
+<style>
+.sns2 {position: relative;z-index: 2;margin: 20px auto;text-align: center;}
+.sns2 div {display: inline-block;}
+.sns2 .fb {position: relative;top: -2px;}
+.sns2 .hatena {position: relative;top: 4px;}
+.sns2 .tw {margin-left: 10px;}
+.sns2 .pocket {width: 86px;position: relative;top: 2px;left:-13px;height: 12px;}
+.sns2 .pocket a {padding:  6px 10px;text-decoration: none;font-size: 12px;border-radius: 3px;background: #ef5362;color: #fff;}
+/*.sns2 .pocket {position: relative;top: -6px;left: -1px;}
+.sns2 .pocket a {background: #ef5362;color: #fff;padding:  8px 10px;text-decoration: none;font-size: 12px;border-radius: 3px;}*/
+/*pocketカウントありはこっち.sns2 .tw {position: relative;top: 4px;left: -1px;}*/
+/*pocketカウントなしはこっち*/.sns2 .tw {position: relative;top: 4px;left: -37px;}
+/*pocketなしはこっち.sns2 .tw {position: relative;top: 4px;left: -4px;}*/
+@media screen and (min-width: 835px) {/*PC1*/
+/*.sns2 .pocket {position: relative;top: -5px;left: -1px;}*/
+/* ** */}
+</style>
+<div class="sns2">
+<div class="fb">
+<!--
+<div class="fb-like" data-layout="button_count" data-size="large" data-href="/mac/tips-view-source-code/"></div>
+-->
+<div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="" data-layout="button" data-action="recommend" data-size="large" data-share="false"></div>
+<!--fb--></div>
+<div class="hatena">
+<!--
+<a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label-counter" data-hatena-bookmark-lang="ja" data-hatena-bookmark-height="28" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async" js.async=true;></script>
+-->
+<a href="https://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-label" data-hatena-bookmark-lang="ja" data-hatena-bookmark-width="90" data-hatena-bookmark-height="28" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/v4/public/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<!--hatena--></div>
+<div class="pocket">
+<!--
+<a href="http://getpocket.com/edit?url=https://www.webdlab.com/&title=" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">Pocket 
+</a>-->
+<!--
+<a data-pocket-label="pocket" data-pocket-count="horizontal" class="pocket-btn" data-lang="en"></a>
+<script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
+-->
+<a data-pocket-label="pocket" data-pocket-count="none" class="pocket-btn" data-lang="en"></a>
+<script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
+<!--pocket--></div>
+<div class="tw">
+<a href="https://twitter.com/share" class="twitter-share-button" 
+data-url=""
+data-text=""
+data-lang="ja"
+data-size="large">
+</a>
+ <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+<!--tw--></div>
+<!--sns2--></div><div class="ad_unit2">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- webdlab Responsive advertisement unit2(www.webdlab.com) -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5994867225041223"
+     data-ad-slot="2003818266"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!--ad_unit2--></div><div class="nav-2">
+<span class="nav-previous"><a href="https://www.webdlab.com/blog/article-15/" rel="prev"><b>【ブログ】LAVIE Tab E 7型ワイド</b></a></span>
+<span class="nav-next"><a href="https://www.webdlab.com/labs/google-translate/" rel="next"><b>【Google】Google翻訳ツールをサイトにはってみる</b></a></span>
+<!--nav-2--></div>
+<!--facebook comments plugin-->
+<!--<div class="fb-comments-parent"></div>-->
+<script>/*
+$(window).on('load resize', function(){
+var w = $(window).width();
+var x = 769;
+if (w <= x) {//769pxより小さい時
+} else {//769pxより大きい時
+}
+});*/
+/*$(".fb-comments-parent").html('<div class="fb-comments" data-href="+location.href+" data-numposts="5" data-width="550"></div>');*/
+</script>
+<!--
+<div class="fb-comments-parent"><script>document.write('<div class="fb-comments" data-href='+location.href+' data-numposts="5" data-width="100%"></div>');</script></div>
+-->
+<div class="ad_unit4">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- webdlab Responsive advertisement unit4(www.webdlab.com) -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5994867225041223"
+     data-ad-slot="3765007868"
+     data-ad-format="autorelaxed"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!--ad_unit4--></div>
+<!--main--></div>
+<aside>
+
+<div class="ad_unit9">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- wdl09 336x280(ad_unit9) -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:336px;height:280px"
+     data-ad-client="ca-pub-5994867225041223"
+     data-ad-slot="1756229109"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!--ad_unit9--></div><!--out 7,8 stay 3 in 9,10,11-->
+<div class="info-ads-300x250">
+<img src="/info/ads/300x250.png">
+</div>
+<p class="ad-notice"><a href="/info/ads/">広告掲載についてのご案内</a></p>
+<div class="translate">
+<div id="google_translate_element"></div><script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'ja', includedLanguages: 'en,ja', layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL}, 'google_translate_element');
+}
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<!--translate--></div>
+<div class="search-pc">
+<form action="//www.google.co.jp/cse" id="cse-search-box">
+  <div>
+    <input type="hidden" name="cx" value="partner-pub-5994867225041223:8818733465" />
+    <input type="hidden" name="ie" value="UTF-8" />
+    <input type="text" name="q" size="30" />
+    <input type="submit" name="sa" value="検索" />
+  </div>
+</form>
+<script type="text/javascript" src="//www.google.co.jp/coop/cse/brand?form=cse-search-box&amp;lang=ja"></script>
+<!--search-pc--></div><!--search-pcはheaderの中-->
+<div class="sns-area">
+<ul>
+<li><a href="//www.facebook.com/webdlab" target="_blank"><img src="/common/img/sns/facebook.png" alt="Facebook"></a></li>
+<li><a href="//twitter.com/webdlab" target="_blank"><img src="/common/img/sns/twitter.png" alt="Twitter"></a></li>
+<li><a href="//www.webdlab.com/feed/" target="_blank"><img src="/common/img/sns/feed.png" alt="Feed"></a></li>
+</ul>
+<!--sns-area--></div>
+
+<div class="widget-area">
+<div class="fb">
+<div class="fb-page" data-href="https://www.facebook.com/webdlab/" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false"><blockquote cite="https://www.facebook.com/webdlab/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/webdlab/">ウェブデザインラボ</a></blockquote></div>
+<!--fb--></div>
+<!--widget-area--></div>
+<div class="info-ads-300x100">
+<img src="/info/ads/300x100.png">
+</div>
+<div class="widget-area">
+<ul class="category">
+<li id="text-4" class="widget widget_text"><h2 class="widgettitle">更新情報</h2>
+			<div class="textwidget"></div>
+		</li>
+</ul>
+<div class="post c_update">
+
+<ul class="cmenu">
+
+<li><a href="/guide/screen-resolution-8/">【2020年10月】iPhone画面解像度まとめ </a>2020/10/14</li>
+<li><a href="/guide/screen-resolution/">【制作Tips】画面解像度一覧表</a>2020/10/14</li>
+
+<!--
+<li><a href="/guide/screen-resolution-7/">【2020年9月】iPad画面解像度まとめ </a>2020/09/17</li>
+<li><a href="/guide/screen-resolution-8/">【2020年10月】iPhone画面解像度まとめ </a>2020/10/14</li>
+<li><a href="/guide/screen-resolution/">【制作Tips】画面解像度一覧表</a>2020/10/14</li>
+-->
+</ul>
+
+<!--
+<p>&nbsp;</p>
+
+<ul class="cupdate">
+<li><a href="/guide/screen-resolution/">【制作Tips】画面解像度一覧表</a>2019/09/12</li>
+<li><a href="/iphone-ipad/pixel-number/">【iPhone】iPhoneメインカメラ・インカメラの画素数一覧</a>2019/09/11</li>
+<li><a href="/guide/screen-resolution-4/">【制作Tips】iPad画面解像度まとめ</a>2019/09/11</li>
+<li><a href="/guide/screen-resolution-3/">【制作Tips】iPhone画面解像度まとめ</a>2019/09/11</li>
+</ul>
+-->
+
+</div>
+<!--widget-area--></div>
+<div class="widget-area">
+<ul class="category">
+<li id="newpostcatch-2" class="widget widget_newpostcatch"><h2 class="widgettitle">最新の投稿</h2>
+					<ul id="npcatch" class="npcatch">
+			  						<li>
+							<a href="https://www.webdlab.com/guide/screen-resolution-8/" title="&lt;span class=&quot;title&quot;&gt;【2020年10月】iPhone画面解像度まとめ&lt;/span&gt;">
+								<figure>
+									<img src="https://www.webdlab.com/wp/wp-content/uploads/iphone-3-150x150.jpg" width="125" height="70" alt="&lt;span class=&quot;title&quot;&gt;【2020年10月】iPhone画面解像度まとめ&lt;/span&gt;" title="&lt;span class=&quot;title&quot;&gt;【2020年10月】iPhone画面解像度まとめ&lt;/span&gt;"/>
+								</figure>
+								<div class="detail">
+									<span class="title">【2020年10月】iPhone画面解像度まとめ</span>																	</div>
+							</a>
+						</li>
+					  						<li>
+							<a href="https://www.webdlab.com/mac/tips-heic-jpg/" title="&lt;span class=&quot;title&quot;&gt;【Mac】写真の拡張子をheicからjpgに簡単に変換する方法&lt;/span&gt;">
+								<figure>
+									<img src="https://www.webdlab.com/wp/wp-content/uploads/mac-150x150.jpg" width="125" height="70" alt="&lt;span class=&quot;title&quot;&gt;【Mac】写真の拡張子をheicからjpgに簡単に変換する方法&lt;/span&gt;" title="&lt;span class=&quot;title&quot;&gt;【Mac】写真の拡張子をheicからjpgに簡単に変換する方法&lt;/span&gt;"/>
+								</figure>
+								<div class="detail">
+									<span class="title">【Mac】写真の拡張子をheicからjpgに簡単に変換する方法</span>																	</div>
+							</a>
+						</li>
+					  						<li>
+							<a href="https://www.webdlab.com/iphone-ipad/heic-jpg/" title="&lt;span class=&quot;title&quot;&gt;【iPhone iPad】heic形式で撮影保存した写真をMacやPCに転送する際はjpgに変換されるように設定する&lt;/span&gt;">
+								<figure>
+									<img src="https://www.webdlab.com/wp/wp-content/uploads/iphone8-2-150x150.jpg" width="125" height="70" alt="&lt;span class=&quot;title&quot;&gt;【iPhone iPad】heic形式で撮影保存した写真をMacやPCに転送する際はjpgに変換されるように設定する&lt;/span&gt;" title="&lt;span class=&quot;title&quot;&gt;【iPhone iPad】heic形式で撮影保存した写真をMacやPCに転送する際はjpgに変換されるように設定する&lt;/span&gt;"/>
+								</figure>
+								<div class="detail">
+									<span class="title">【iPhone iPad】heic形式で撮影保存した写真をMacやPCに転送する際はjpgに変換されるように設定する</span>																	</div>
+							</a>
+						</li>
+					  						<li>
+							<a href="https://www.webdlab.com/mac/service-battery-display-3/" title="&lt;span class=&quot;title&quot;&gt;【MacBook Pro】修理が完了してMacBook ProがAppleから自宅に宅配便で到着&lt;/span&gt;">
+								<figure>
+									<img src="https://www.webdlab.com/wp/wp-content/uploads/mac-150x150.jpg" width="125" height="70" alt="&lt;span class=&quot;title&quot;&gt;【MacBook Pro】修理が完了してMacBook ProがAppleから自宅に宅配便で到着&lt;/span&gt;" title="&lt;span class=&quot;title&quot;&gt;【MacBook Pro】修理が完了してMacBook ProがAppleから自宅に宅配便で到着&lt;/span&gt;"/>
+								</figure>
+								<div class="detail">
+									<span class="title">【MacBook Pro】修理が完了してMacBook ProがAppleから自宅に宅配便で到着</span>																	</div>
+							</a>
+						</li>
+					  						<li>
+							<a href="https://www.webdlab.com/blog/fuji-wifi-wimax-10/" title="&lt;span class=&quot;title&quot;&gt;FUJI WifiのWiMAX無制限プラン終了のお知らせ【緊急】&lt;/span&gt;">
+								<figure>
+									<img src="https://www.webdlab.com/wp/wp-content/uploads/fuji-wifi-cloudwifi-150x150.jpg" width="125" height="70" alt="&lt;span class=&quot;title&quot;&gt;FUJI WifiのWiMAX無制限プラン終了のお知らせ【緊急】&lt;/span&gt;" title="&lt;span class=&quot;title&quot;&gt;FUJI WifiのWiMAX無制限プラン終了のお知らせ【緊急】&lt;/span&gt;"/>
+								</figure>
+								<div class="detail">
+									<span class="title">FUJI WifiのWiMAX無制限プラン終了のお知らせ【緊急】</span>																	</div>
+							</a>
+						</li>
+					  						<li>
+							<a href="https://www.webdlab.com/mac/service-battery-display-2/" title="&lt;span class=&quot;title&quot;&gt;【MacBook Pro】Appleストア持ち込み修理&lt;/span&gt;">
+								<figure>
+									<img src="https://www.webdlab.com/wp/wp-content/uploads/03-150x150.jpg" width="125" height="70" alt="&lt;span class=&quot;title&quot;&gt;【MacBook Pro】Appleストア持ち込み修理&lt;/span&gt;" title="&lt;span class=&quot;title&quot;&gt;【MacBook Pro】Appleストア持ち込み修理&lt;/span&gt;"/>
+								</figure>
+								<div class="detail">
+									<span class="title">【MacBook Pro】Appleストア持ち込み修理</span>																	</div>
+							</a>
+						</li>
+					  						<li>
+							<a href="https://www.webdlab.com/mac/service-battery-display/" title="&lt;span class=&quot;title&quot;&gt;【MacBook Pro】本体バッテリー膨張と液晶画面のコーティングはがれ&lt;/span&gt;">
+								<figure>
+									<img src="https://www.webdlab.com/wp/wp-content/uploads/mac-150x150.jpg" width="125" height="70" alt="&lt;span class=&quot;title&quot;&gt;【MacBook Pro】本体バッテリー膨張と液晶画面のコーティングはがれ&lt;/span&gt;" title="&lt;span class=&quot;title&quot;&gt;【MacBook Pro】本体バッテリー膨張と液晶画面のコーティングはがれ&lt;/span&gt;"/>
+								</figure>
+								<div class="detail">
+									<span class="title">【MacBook Pro】本体バッテリー膨張と液晶画面のコーティングはがれ</span>																	</div>
+							</a>
+						</li>
+					  						<li>
+							<a href="https://www.webdlab.com/guide/screen-resolution-7/" title="&lt;span class=&quot;title&quot;&gt;【2020年9月】iPad画面解像度まとめ&lt;/span&gt;">
+								<figure>
+									<img src="https://www.webdlab.com/wp/wp-content/uploads/ipad-3-150x150.jpg" width="125" height="70" alt="&lt;span class=&quot;title&quot;&gt;【2020年9月】iPad画面解像度まとめ&lt;/span&gt;" title="&lt;span class=&quot;title&quot;&gt;【2020年9月】iPad画面解像度まとめ&lt;/span&gt;"/>
+								</figure>
+								<div class="detail">
+									<span class="title">【2020年9月】iPad画面解像度まとめ</span>																	</div>
+							</a>
+						</li>
+					  						<li>
+							<a href="https://www.webdlab.com/mac/tips-file-application/" title="&lt;span class=&quot;title&quot;&gt;【Mac】ファイルアプリケーションのひも付けを変更する&lt;/span&gt;">
+								<figure>
+									<img src="https://www.webdlab.com/wp/wp-content/uploads/mac-150x150.jpg" width="125" height="70" alt="&lt;span class=&quot;title&quot;&gt;【Mac】ファイルアプリケーションのひも付けを変更する&lt;/span&gt;" title="&lt;span class=&quot;title&quot;&gt;【Mac】ファイルアプリケーションのひも付けを変更する&lt;/span&gt;"/>
+								</figure>
+								<div class="detail">
+									<span class="title">【Mac】ファイルアプリケーションのひも付けを変更する</span>																	</div>
+							</a>
+						</li>
+					  						<li>
+							<a href="https://www.webdlab.com/mac/smc-reset-3/" title="&lt;span class=&quot;title&quot;&gt;【Mac】Macの調子がおかしくなったのでまたまたSMCリセットをしてみた&lt;/span&gt;">
+								<figure>
+									<img src="https://www.webdlab.com/wp/wp-content/uploads/mac-150x150.jpg" width="125" height="70" alt="&lt;span class=&quot;title&quot;&gt;【Mac】Macの調子がおかしくなったのでまたまたSMCリセットをしてみた&lt;/span&gt;" title="&lt;span class=&quot;title&quot;&gt;【Mac】Macの調子がおかしくなったのでまたまたSMCリセットをしてみた&lt;/span&gt;"/>
+								</figure>
+								<div class="detail">
+									<span class="title">【Mac】Macの調子がおかしくなったのでまたまたSMCリセットをしてみた</span>																	</div>
+							</a>
+						</li>
+					  					</ul>
+
+			</li>
+</ul>
+<!--widget-area--></div>
+<div class="info-ads-300x100">
+<img src="/info/ads/300x100.png">
+</div>
+
+<div id="counter">
+<span id="c_ip"><script src="/common/js/counter_ip.php"></script></span><br>
+<span id="c_pv"><script src="/common/js/counter_pv.php"></script></span>
+<!--counter--></div>
+
+<div class="ad_unit3">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- wdl03 Responsive(ad_unit3) -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5994867225041223"
+     data-ad-slot="4681081861"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!--ad_unit3--></div>
+<p class="ad-notice"><a href="/info/ads/">広告掲載についてのご案内</a></p>
+<div class="info-ads-300x100">
+<img src="/info/ads/300x100.png">
+</div>
+<div class="widget-area">
+<ul class="category">
+  <li><h3>外部リンク</h3></li>
+  <li><a href="//validator.w3.org/" target="_blank">Markup Validation Service</a></li>
+  <li><a href="//jigsaw.w3.org/css-validator/" target="_blank">CSS Validation Service</a></li>
+</ul>
+<!--widget-area--></div>
+<div class="widget-area">
+<ul class="category">
+<li><h3>Webデザインラボ コンテンツ</h3>
+			<ul>
+					<li class="cat-item cat-item-134"><a href="https://www.webdlab.com/category/blog/">blog</a> (40)
+</li>
+	<li class="cat-item cat-item-85"><a href="https://www.webdlab.com/category/camera/">Camera</a> (9)
+</li>
+	<li class="cat-item cat-item-4"><a href="https://www.webdlab.com/category/css/">CSS</a> (121)
+</li>
+	<li class="cat-item cat-item-156"><a href="https://www.webdlab.com/category/gimp/">GIMP</a> (8)
+</li>
+	<li class="cat-item cat-item-87"><a href="https://www.webdlab.com/category/guide/">Guide</a> (16)
+</li>
+	<li class="cat-item cat-item-5"><a href="https://www.webdlab.com/category/html/">HTML</a> (119)
+</li>
+	<li class="cat-item cat-item-507"><a href="https://www.webdlab.com/category/inkscape/">Inkscape</a> (3)
+</li>
+	<li class="cat-item cat-item-138"><a href="https://www.webdlab.com/category/iphone-ipad/">iPhone iPad</a> (29)
+</li>
+	<li class="cat-item cat-item-197"><a href="https://www.webdlab.com/category/javascript/">JavaScript</a> (25)
+</li>
+	<li class="cat-item cat-item-196"><a href="https://www.webdlab.com/category/jquery/">jQuery</a> (14)
+</li>
+	<li class="cat-item cat-item-89"><a href="https://www.webdlab.com/category/labs/">Labs</a> (202)
+</li>
+	<li class="cat-item cat-item-193"><a href="https://www.webdlab.com/category/local/">Local</a> (42)
+</li>
+	<li class="cat-item cat-item-141"><a href="https://www.webdlab.com/category/mac/">Mac</a> (60)
+</li>
+	<li class="cat-item cat-item-96"><a href="https://www.webdlab.com/category/webtool/">Web Tool</a> (6)
+</li>
+			</ul>
+
+			</li></ul>
+<!--widget-area--></div>
+<div class="ad_unit10">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- wdl10 336x280(ad_unit10) -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:336px;height:280px"
+     data-ad-client="ca-pub-5994867225041223"
+     data-ad-slot="1798427904"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!--ad_unit10--></div>
+<div class="widget-area">
+<ul class="category">
+<li><h3>about Webデザインラボ中の人</h3>			<div class="textwidget"><div class="greeting-admin"><img src="/common/img/01.jpg" alt="Webデザインラボ中の人" />NYのデザイン学校でグラフィックデザインを学んだ後、同じくNYにあるWeb制作会社にてインターンからWebデザイナーへ。同時期に米国永住権(グリーンカード)を取得。その後某旅行会社系のWebクリエーター兼社内インフラ担として働いた後、結婚を機に約12年に渡るアメリカ生活を終え日本に帰国。日本では某携帯キャリアの社内Webクリエーターとして勤務。Web系に携わる前はホノルル空港でGreeterとして働いていた経験や、アメリカ国内の衣料品を中心としたアパレル系のバイヤー経験もあり。趣味はお酒を飲みながらの家でまったり音楽鑑賞とアウトドア系全般。最近は自転車にもハマってます。そうそう食べ歩きもね。更新情報は<a href="//twitter.com/webdlab" target="_blank" rel="noopener noreferrer">Twitter</a>か<a href="//www.facebook.com/webdlab" target="_blank" rel="noopener noreferrer">Facebook</a>で配信してるのでフォローして確認してみて。</div>
+</div>
+		</li><li><h3><a class="rsswidget" href="https://www.webdlab.com/feed/"><img class="rss-widget-icon" style="border:0" width="14" height="14" src="https://www.webdlab.com/wp/wp-includes/images/rss.png" alt="RSS" /></a> <a class="rsswidget" href="https://www.webdlab.com/">Webデザインラボ</a></h3><ul><li><a class='rsswidget' href='https://www.webdlab.com/guide/screen-resolution-8/'>【2020年10月】iPhone画面解像度まとめ</a></li><li><a class='rsswidget' href='https://www.webdlab.com/mac/tips-heic-jpg/'>【Mac】写真の拡張子をheicからjpgに簡単に変換する方法</a></li><li><a class='rsswidget' href='https://www.webdlab.com/iphone-ipad/heic-jpg/'>【iPhone iPad】heic形式で撮影保存した写真をMacやPCに転送する際はjpgに変換されるように設定する</a></li><li><a class='rsswidget' href='https://www.webdlab.com/mac/service-battery-display-3/'>【MacBook Pro】修理が完了してMacBook ProがAppleから自宅に宅配便で到着</a></li><li><a class='rsswidget' href='https://www.webdlab.com/blog/fuji-wifi-wimax-10/'>FUJI WifiのWiMAX無制限プラン終了のお知らせ【緊急】</a></li></ul></li><li>			<div class="textwidget"><p>&nbsp;</p>
+<p><a href="https://www.webdlab.com/feed/">RSS</a></p>
+</div>
+		</li></ul>
+<!--widget-area--></div>
+<div class="info-ads-300x250">
+<img src="/info/ads/300x250.png">
+</div>
+<div class="b-mura">
+<!--<a href="//www.blogmura.com/ranking.html" target="_blank"><img src="//www.blogmura.com/img/www88_31.gif" width="88" height="31" border="0" alt="ブログランキング・にほんブログ村へ" /></a>-->
+<a href="//design.blogmura.com/webdesign/ranking.html" target="_blank"><img src="//design.blogmura.com/webdesign/img/webdesign88_31.gif" width="88" height="31" border="0" alt="にほんブログ村 デザインブログ Webデザインへ" /></a>
+<!--<a href="//it.blogmura.com/ranking.html" target="_blank"><img src="//it.blogmura.com/img/it88_31.gif" width="88" height="31" border="0" alt="にほんブログ村 IT技術ブログへ" /></a>-->
+<!--<a href="//blog.with2.net/link/?1980014:1030" target="_blank"><img src="https://blog.with2.net/img/banner/c/banner_1/br_c_1030_1.gif" title="Webサイト・CGIランキング"></a>-->
+<a href="//blog.with2.net/link/?1980014:1072" target="_blank"><img src="https://blog.with2.net/img/banner/c/banner_1/br_c_1072_1.gif" title="ウェブデザインランキング"></a>
+<p>&nbsp;</p>
+<a href="https://blogmura.com/profiles/10912664?p_cid=10912664"><img src="https://blogparts.blogmura.com/parts_image/user/pv10912664.gif" alt="PVアクセスランキング にほんブログ村" /></a>
+</div>
+<p>&nbsp;</p>
+<div class="ad_unit11">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- wdl11 336x280(ad_unit11) -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:336px;height:280px"
+     data-ad-client="ca-pub-5994867225041223"
+     data-ad-slot="2713024256"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!--ad_unit11--></div></aside>
+<!--contents--></div>
+  <div class="pagetop">
+  <a href="#wrapper"></a>
+  <!--pagetop--></div>
+<footer>
+<section>
+<nav id="fnav">
+<ul>
+<li><a href="/">HOME</a><span>|</span></li>
+<li><a href="/info/">インフォメーション</a><span>|</span></li>
+<li><a href="/contact/">お問い合わせ</a><span>|</span></li>
+<li><a href="/info/ads/">広告掲載についてのご案内</a></li>
+</ul>
+<!--fnav--></nav>
+<div id="copyright">&copy;2009-<script>Year();</script> web design lab<!--copyright--></div>
+</section>
+</footer>
+<!--wrapper--></div>
+<script type='text/javascript' src='https://www.webdlab.com/wp/wp-includes/js/wp-embed.min.js?ver=5.5.3' id='wp-embed-js'></script>
+</body>
+</html>
